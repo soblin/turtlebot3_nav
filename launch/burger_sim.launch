@@ -1,0 +1,4 @@
+<launch>
+  <include file="$(find turtlebot3_nav)/launch/bringup_world.launch"/>
+  <include file="$(find turtlebot3_nav)/launch/bringup_burger.launch"/>
+</launch>
