@@ -9,6 +9,7 @@
   <license>BSD</license>
 
   <exec_depend>turtlebot3_simulations</exec_depend>
+  <exec_depend>turtlebot3_navigation</exec_depend>
   <exec_depend>turtlebot3_gazebo</exec_depend>
   <exec_depend>turtlebot3_msgs</exec_depend>
   <exec_depend>turtlebot3_teleop</exec_depend>
