@@ -14,47 +14,18 @@
   <arg name="move_forward_only" default="false"/>
 
   <group ns="$(arg robot_namespace)">
+	<!-- Model -->
 	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description"/>  
 	<node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher">
 	  <param name="tf_prefix" value="$(arg robot_namespace)"/>
 	</node>
 
-	<!-- move_base -->
-	<!--node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-      <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
-      <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="global_costmap" />
-      <rosparam file="$(find turtlebot3_navigation)/param/costmap_common_params_$(arg model).yaml" command="load" ns="local_costmap" />
-      <rosparam file="$(find turtlebot3_navigation)/param/local_costmap_params.yaml" command="load" />
-      <rosparam file="$(find turtlebot3_navigation)/param/global_costmap_params.yaml" command="load" />
-      <rosparam file="$(find turtlebot3_navigation)/param/move_base_params.yaml" command="load" />
-      <rosparam file="$(find turtlebot3_navigation)/param/dwa_local_planner_params_$(arg model).yaml" command="load" />
-      <remap from="cmd_vel" to="$(arg cmd_vel_topic)"/>
-      <remap from="odom" to="$(arg odom_topic)"/>
-      <param name="DWAPlannerROS/min_vel_x" value="0.0" if="$(arg move_forward_only)" />
-	</node-->
-
+	<!-- SLAM -->
 	<include file="$(find turtlebot3_nav)/launch/slam_$(arg slam_method).launch">
 	  <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+	  <arg name="configuration_basename" default="$(arg configuration_basename)"/>
 	</include>
 
-	<!-- cartographer_node -->
-	<!--node pkg="cartographer_ros" type="cartographer_node" name="cartographer_node" 
-          args="-configuration_directory $(find turtlebot3_nav)/config
-				-configuration_basename $(arg configuration_basename)"
-          output="screen">
-      <remap from="imu" to="flat_imu"/>
-	</node-->
-
-	<!-- cartographer_occupancy_grid_node -->
-	<!--node pkg="cartographer_ros" type="cartographer_occupancy_grid_node"
-          name="cartographer_occupancy_grid_node" 
-          args="-resolution 0.05"/-->
-
-	<!-- flat_world_imu_node -->
-	<!--node pkg="turtlebot3_slam" type="flat_world_imu_node" name="flat_world_imu_node" output="screen">
-      <remap from="imu_in" to="imu" />
-      <remap from="imu_out" to="flat_imu" />
-	  </node-->
   </group>
 </launch>

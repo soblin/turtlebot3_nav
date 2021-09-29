@@ -1,5 +1,6 @@
 <launch>
   <arg name="robot_namespace"/>
+  <arg name="configuration_basename" default=""/>
 
   <!-- Gmapping -->
   <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen">
