@@ -1,4 +1,5 @@
 <launch>
+  <arg name="output" default="log"/>
   <arg name="robot_namespace" default="burger1"/>
 
   <arg name="model" default="burger"/>
@@ -9,10 +10,6 @@
   <arg name="slam_method" default="gmapping" doc="slam type [gmapping, cartographer]"/>
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
 
-  <arg name="cmd_vel_topic" default="cmd_vel"/>
-  <arg name="odom_topic" default="odom" />
-  <arg name="move_forward_only" default="false"/>
-
   <group ns="$(arg robot_namespace)">
 	<!-- Model -->
 	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
@@ -20,12 +17,13 @@
 	<node name="robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher">
 	  <param name="tf_prefix" value="$(arg robot_namespace)"/>
 	</node>
-
-	<!-- SLAM -->
-	<include file="$(find turtlebot3_nav)/launch/slam_$(arg slam_method).launch">
-	  <arg name="robot_namespace" value="$(arg robot_namespace)"/>
-	  <arg name="configuration_basename" default="$(arg configuration_basename)"/>
-	</include>
-
   </group>
+
+  <!-- SLAM -->
+  <include file="$(find turtlebot3_nav)/launch/slam_$(arg slam_method).launch">
+	<arg name="output" value="$(arg output)"/>
+	<arg name="robot_namespace" value="$(arg robot_namespace)"/>
+	<arg name="configuration_basename" default="$(arg configuration_basename)"/>
+  </include>
+
 </launch>

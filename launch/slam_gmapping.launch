@@ -1,12 +1,15 @@
 <launch>
+  <arg name="output"/>
   <arg name="robot_namespace"/>
   <arg name="configuration_basename" default=""/>
 
-  <!-- Gmapping -->
-  <node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="screen">
-    <param name="base_frame" value="$(arg robot_namespace)/base_footprint"/>
-    <param name="odom_frame" value="$(arg robot_namespace)/odom"/>
-    <param name="map_frame"  value="$(arg robot_namespace)/map"/>
-    <rosparam command="load" file="$(find turtlebot3_slam)/config/gmapping_params.yaml" />
-  </node>	
+  <group ns="$(arg robot_namespace)">
+	<!-- Gmapping -->
+	<node pkg="gmapping" type="slam_gmapping" name="turtlebot3_slam_gmapping" output="$(arg output)">
+      <param name="base_frame" value="$(arg robot_namespace)/base_footprint"/>
+      <param name="odom_frame" value="$(arg robot_namespace)/odom"/>
+      <param name="map_frame"  value="$(arg robot_namespace)/map"/>
+      <rosparam command="load" file="$(find turtlebot3_slam)/config/gmapping_params.yaml" />
+	</node>
+  </group>
 </launch>

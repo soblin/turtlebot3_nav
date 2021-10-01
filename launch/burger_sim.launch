@@ -1,12 +1,15 @@
 <launch>
   <arg name="gui" default="true"/>
-  <arg name="slam_method" default="cartographer"/>
+  <arg name="output" default="log"/>
+  <arg name="robot_namespace" default="burger1"/>
+  <arg name="slam_method" default="gmapping"/>
 
   <include file="$(find turtlebot3_nav)/launch/bringup_world.launch">
 	<arg name="gui" value="$(arg gui)"/>
   </include>
 
   <include file="$(find turtlebot3_nav)/launch/bringup_burger.launch">
+	<arg name="output" value="$(arg output)"/>
 	<arg name="slam_method" value="$(arg slam_method)"/>
   </include>
 
