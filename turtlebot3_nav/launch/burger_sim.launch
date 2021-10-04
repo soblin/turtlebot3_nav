@@ -2,15 +2,24 @@
   <arg name="gui" default="true"/>
   <arg name="output" default="log"/>
   <arg name="robot_namespace" default="burger1"/>
-  <arg name="slam_method" default="gmapping"/>
+  <arg name="slam_method" default="gmapping" doc="slam type [gmapping, cartographer]"/>
+  <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
 
+  <!-- Gazebo -->
   <include file="$(find turtlebot3_nav)/launch/bringup_world.launch">
 	<arg name="gui" value="$(arg gui)"/>
   </include>
 
+  <!-- robot -->
   <include file="$(find turtlebot3_nav)/launch/bringup_burger.launch">
 	<arg name="output" value="$(arg output)"/>
-	<arg name="slam_method" value="$(arg slam_method)"/>
+  </include>
+
+  <!-- SLAM -->
+  <include file="$(find turtlebot3_nav)/launch/slam_$(arg slam_method).launch">
+	<arg name="output" value="$(arg output)"/>
+	<arg name="robot_namespace" value="$(arg robot_namespace)"/>
+	<arg name="configuration_basename" default="$(arg configuration_basename)"/>
   </include>
 
   <node name="rviz" type="rviz" pkg="rviz" args="-d $(find turtlebot3_nav)/config/burger_sim.rviz"/>
