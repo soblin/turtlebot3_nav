@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>turtlebot3_custom_description</name>
+  <version>0.0.0</version>
+  <description>Added robot prefix to link name to original</description>
+
+  <maintainer email="soblin@todo.todo">soblin</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>urdf</depend>
+  <depend>xacro</depend>
+</package>
