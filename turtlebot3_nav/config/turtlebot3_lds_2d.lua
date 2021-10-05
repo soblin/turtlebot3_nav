@@ -15,13 +15,15 @@
 include "map_builder.lua"
 include "trajectory_builder.lua"
 
+robot_namespace = os.getenv("ROBOT_NAMESPACE")
+
 options = {
   map_builder = MAP_BUILDER,
   trajectory_builder = TRAJECTORY_BUILDER,
-  map_frame = "burger1_map",
-  tracking_frame = "burger1_base_footprint", -- imu_link, If you are using gazebo, use 'base_footprint' (libgazebo_ros_imu's bug)
-  published_frame = "burger1_odom",
-  odom_frame = "burger1_odom",
+  map_frame = robot_namespace .. "_map",
+  tracking_frame = robot_namespace .. "_base_footprint", -- imu_link, If you are using gazebo, use 'base_footprint' (libgazebo_ros_imu's bug)
+  published_frame = robot_namespace .. "_odom",
+  odom_frame = robot_namespace .. "_odom",
   provide_odom_frame = false,
   publish_frame_projected_to_2d = false,
   use_odometry = true,
