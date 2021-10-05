@@ -6,14 +6,12 @@ roslaunch turtlebot3_nav bringup_world.launch
 
 # launch robot
 
-default is `model == burger [burger, waffle, waffle_pi]` and `robot_namespace == burger1`.
-
-`slam_method` is `gmapping` by default as of now.
+default parameters are `model == burger [burger, waffle, waffle_pi]` , `robot_namespace == burger1` and `slam_method == cartographer [cartographer, gmapping]`.
 
 ## launch each robot
 
 ```
-roslaunch turtlebot3_nav sim.launch model:=burger robot_namespace:=burger1 slam_method:=gmapping
+roslaunch turtlebot3_nav sim.launch model:=burger robot_namespace:=burger1 slam_method:=cartographer
 ```
 ## teleop
 

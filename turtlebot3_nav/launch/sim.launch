@@ -1,7 +1,7 @@
 <launch>
   <arg name="model" default="burger" doc="model [burger, waffle, waffle_pi]"/>
   <arg name="robot_namespace" default="burger1"/>
-  <arg name="slam_method" default="gmapping" doc="slam type [gmapping, cartographer]"/>
+  <arg name="slam_method" default="cartographer" doc="slam type [gmapping, cartographer]"/>
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
 
   <arg name="x_pos" default="-3.0"/>
