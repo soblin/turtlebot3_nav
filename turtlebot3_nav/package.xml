@@ -15,6 +15,7 @@
   <exec_depend>turtlebot3_teleop</exec_depend>
   <exec_depend>turtlebot3_slam</exec_depend>
   <exec_depend>cartographer_ros</exec_depend>
+  <exec_depend>slam_gmapping</exec_depend>
   <buildtool_depend>catkin</buildtool_depend>
 
 </package>

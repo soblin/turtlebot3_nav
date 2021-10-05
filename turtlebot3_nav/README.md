@@ -1,16 +1,22 @@
-1. launch gazebo and burger
+# launch gazebo
 
 ```
-roslaunch turtlebot3_nav burgersim.launch
+roslaunch turtlebot3_nav bringup_world.launch
 ```
 
-2. teleop
+# launch robot
+
+default is `model == burger [burger, waffle, waffle_pi]` and `robot_namespace == burger1`.
+
+`slam_method` is `gmapping` by default as of now.
+
+## launch each robot
 
 ```
-rostopic pub /burger1/cmd_vel
+roslaunch turtlebot3_nav sim.launch model:=burger robot_namespace:=burger1 slam_method:=gmapping
 ```
+## teleop
 
-3. TODO
-
-- use teleop launch file
-- map is not received yet
+```
+roslaunch turtlebot3_nav teleop_robot.launch robot_namespace:=burger1
+```
