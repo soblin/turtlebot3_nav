@@ -10,7 +10,7 @@
   <!-- Model -->
   <group if="$(eval model == 'burger' or model == 'waffle' or model == 'waffle_pi')">
 	<!-- use _ instead of / for robot prefix -->
-	<param name="$(arg robot_namespace)_robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_custom_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_prefix:=$(arg robot_namespace)"/>
+	<param name="$(arg robot_namespace)_robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_custom_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=$(arg robot_namespace)"/>
 
 	<node name="$(arg robot_namespace)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param $(arg robot_namespace)_robot_description"/>
 	<node name="$(arg robot_namespace)_robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher">

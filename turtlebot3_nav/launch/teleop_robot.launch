@@ -1,5 +1,5 @@
 <launch>
-  <arg name="robot_namespace" default="burger1"/>
+  <arg name="robot_namespace" doc="robot_namespace is required for teleop"/>
   <group ns="$(arg robot_namespace)">
 	<!-- turtlebot3_teleop_key already has its own built in velocity smoother -->
 	<node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key" name="turtlebot3_teleop_keyboard"  output="screen">
