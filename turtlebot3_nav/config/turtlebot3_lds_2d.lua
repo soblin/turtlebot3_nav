@@ -18,10 +18,10 @@ include "trajectory_builder.lua"
 options = {
   map_builder = MAP_BUILDER,
   trajectory_builder = TRAJECTORY_BUILDER,
-  map_frame = "map",
-  tracking_frame = "base_footprint", -- imu_link, If you are using gazebo, use 'base_footprint' (libgazebo_ros_imu's bug)
-  published_frame = "odom",
-  odom_frame = "odom",
+  map_frame = "burger1_map",
+  tracking_frame = "burger1_base_footprint", -- imu_link, If you are using gazebo, use 'base_footprint' (libgazebo_ros_imu's bug)
+  published_frame = "burger1_odom",
+  odom_frame = "burger1_odom",
   provide_odom_frame = false,
   publish_frame_projected_to_2d = false,
   use_odometry = true,
