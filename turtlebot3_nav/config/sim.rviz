@@ -64,6 +64,39 @@ Visualization Manager:
             Expand Link Details: false
             Expand Tree: false
             Link Tree Style: Links in Alphabetic Order
+            burger1_base_footprint:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            burger1_base_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            burger1_base_scan:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            burger1_caster_back_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            burger1_imu_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+            burger1_wheel_left_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
+            burger1_wheel_right_link:
+              Alpha: 1
+              Show Axes: false
+              Show Trail: false
+              Value: true
           Name: RobotModel
           Robot Description: /burger1_robot_description
           TF Prefix: ""
@@ -101,7 +134,7 @@ Visualization Manager:
             Shaft Length: 0.009999999776482582
             Shaft Radius: 0.30000001192092896
             Value: Arrow
-          Topic: /burger1/odom
+          Topic: /burger1_odom
           Unreliable: false
           Value: true
         - Alpha: 0.699999988079071
@@ -110,7 +143,7 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: Map
-          Topic: /burger1/map
+          Topic: /burger1_map
           Unreliable: false
           Use Timestamp: false
           Value: true
@@ -165,7 +198,7 @@ Visualization Manager:
             Shaft Length: 0.009999999776482582
             Shaft Radius: 0.30000001192092896
             Value: Arrow
-          Topic: /burger2/odom
+          Topic: /burger2_odom
           Unreliable: false
           Value: true
         - Alpha: 0.699999988079071
@@ -174,11 +207,11 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: Map
-          Topic: /burger2/map
+          Topic: /burger2_map
           Unreliable: false
           Use Timestamp: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: burger2
     - Class: rviz/Group
       Displays:
@@ -229,7 +262,7 @@ Visualization Manager:
             Shaft Length: 0.009999999776482582
             Shaft Radius: 0.30000001192092896
             Value: Arrow
-          Topic: /waffle1/odom
+          Topic: /waffle1_odom
           Unreliable: false
           Value: true
         - Alpha: 0.699999988079071
@@ -238,11 +271,11 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: Map
-          Topic: /waffle1/map
+          Topic: /waffle1_map
           Unreliable: false
           Use Timestamp: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: waffle1
     - Class: rviz/Group
       Displays:
@@ -256,65 +289,6 @@ Visualization Manager:
             Expand Link Details: false
             Expand Tree: false
             Link Tree Style: Links in Alphabetic Order
-            waffle2_base_footprint:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle2_base_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle2_base_scan:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle2_camera_depth_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle2_camera_depth_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle2_camera_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle2_camera_rgb_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle2_camera_rgb_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle2_caster_back_left_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle2_caster_back_right_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle2_imu_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle2_wheel_left_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle2_wheel_right_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
           Name: RobotModel
           Robot Description: /waffle2_robot_description
           TF Prefix: ""
@@ -352,7 +326,7 @@ Visualization Manager:
             Shaft Length: 0.009999999776482582
             Shaft Radius: 0.30000001192092896
             Value: Arrow
-          Topic: /waffle2/odom
+          Topic: /waffle2_odom
           Unreliable: false
           Value: true
         - Alpha: 0.699999988079071
@@ -361,11 +335,11 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: Map
-          Topic: /waffle2/map
+          Topic: /waffle2_map
           Unreliable: false
           Use Timestamp: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: waffle2
     - Class: rviz/Group
       Displays:
@@ -379,57 +353,6 @@ Visualization Manager:
             Expand Link Details: false
             Expand Tree: false
             Link Tree Style: Links in Alphabetic Order
-            waffle_pi1_base_footprint:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi1_base_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi1_base_scan:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi1_camera_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi1_camera_rgb_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi1_camera_rgb_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi1_caster_back_left_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi1_caster_back_right_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi1_imu_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi1_wheel_left_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi1_wheel_right_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
           Name: RobotModel
           Robot Description: /waffle_pi1_robot_description
           TF Prefix: ""
@@ -467,7 +390,7 @@ Visualization Manager:
             Shaft Length: 0.009999999776482582
             Shaft Radius: 0.30000001192092896
             Value: Arrow
-          Topic: /waffle_pi1/odom
+          Topic: /waffle_pi1_odom
           Unreliable: false
           Value: true
         - Alpha: 0.699999988079071
@@ -476,11 +399,11 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: Map
-          Topic: /waffle_pi1/map
+          Topic: /waffle_pi1_map
           Unreliable: false
           Use Timestamp: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: waffle_pi1
     - Class: rviz/Group
       Displays:
@@ -490,7 +413,7 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: Map
-          Topic: /waffle_pi2/map
+          Topic: /waffle_pi2_map
           Unreliable: false
           Use Timestamp: false
           Value: true
@@ -525,7 +448,7 @@ Visualization Manager:
             Shaft Length: 0.009999999776482582
             Shaft Radius: 0.30000001192092896
             Value: Arrow
-          Topic: /waffle_pi2/odom
+          Topic: /waffle_pi2_odom
           Unreliable: false
           Value: true
         - Alpha: 1
@@ -538,70 +461,19 @@ Visualization Manager:
             Expand Link Details: false
             Expand Tree: false
             Link Tree Style: Links in Alphabetic Order
-            waffle_pi2_base_footprint:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi2_base_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi2_base_scan:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi2_camera_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi2_camera_rgb_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi2_camera_rgb_optical_frame:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi2_caster_back_left_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi2_caster_back_right_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi2_imu_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-            waffle_pi2_wheel_left_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
-            waffle_pi2_wheel_right_link:
-              Alpha: 1
-              Show Axes: false
-              Show Trail: false
-              Value: true
           Name: RobotModel
           Robot Description: /waffle_pi2_robot_description
           TF Prefix: ""
           Update Interval: 0
           Value: true
           Visual Enabled: true
-      Enabled: true
+      Enabled: false
       Name: waffle_pi2
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: burger1/map
+    Fixed Frame: burger1_map
     Frame Rate: 30
   Name: root
   Tools:
@@ -625,7 +497,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 30.373437881469727
+      Distance: 12.412883758544922
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -661,5 +533,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1498
-  X: 94
-  Y: 72
+  X: 189
+  Y: 1190

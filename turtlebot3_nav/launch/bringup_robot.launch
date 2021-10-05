@@ -13,9 +13,11 @@
 	<param name="$(arg robot_namespace)_robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_custom_description)/urdf/turtlebot3_$(arg model).urdf.xacro robot_namespace:=$(arg robot_namespace)"/>
 
 	<node name="$(arg robot_namespace)_spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -model turtlebot3_$(arg robot_namespace) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param $(arg robot_namespace)_robot_description"/>
+
 	<node name="$(arg robot_namespace)_robot_state_publisher" type="robot_state_publisher" pkg="robot_state_publisher">
 	  <remap from="robot_description" to="$(arg robot_namespace)_robot_description"/>
 	</node>
+
   </group>
 
 </launch>
