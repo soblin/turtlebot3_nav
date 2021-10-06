@@ -5,12 +5,10 @@
 int main(int argc, char** argv) {
   ros::init(argc, argv, "costmap");
 
-  ros::NodeHandle nh;
+  tf2_ros::Buffer tf_buf(ros::Duration(10));
+  tf2_ros::TransformListener tf(tf_buf);
 
-  tf2_ros::Buffer tf_buf;
-
-  costmap_2d::Costmap2DROS costmap("costmap", tf_buf);
-
+  costmap_2d::Costmap2DROS costmap("", tf_buf);
   costmap.start();
 
   ros::spin();

@@ -4,7 +4,7 @@
 
   <group ns="$(arg robot_namespace)">
 	<node pkg="turtlebot3_path_planner" type="global_costmap_publisher" name="global_costmap_publisher">
-	  <rosparam command="load" file="$(find turtlebot3_path_planner)/config/global_costmap.yaml"/>
+	  <rosparam command="load" file="$(find turtlebot3_path_planner)/config/global_costmap.yaml" subst_value="true"/>
 	</node>
   </group>
 </launch>
