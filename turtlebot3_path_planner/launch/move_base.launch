@@ -1,0 +1,10 @@
+<launch>
+  <arg name="robot_namespace" default="burger1"/>
+  <arg name="output" default="log"/>
+
+  <group ns="$(arg robot_namespace)">
+	<node pkg="turtlebot3_path_planner" type="global_costmap_publisher" name="global_costmap_publisher">
+	  <rosparam command="load" file="$(find turtlebot3_path_planner)/config/global_costmap.yaml"/>
+	</node>
+  </group>
+</launch>
