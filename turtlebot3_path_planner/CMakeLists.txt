@@ -7,15 +7,11 @@ find_package(catkin REQUIRED COMPONENTS
   nav_msgs
   roscpp
   visualization_msgs
+  costmap_2d
 )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
-
-
-################################################
-## Declare ROS messages, services and actions ##
-################################################
 
 ## Generate messages in the 'msg' folder
 # add_message_files(
@@ -44,20 +40,6 @@ find_package(catkin REQUIRED COMPONENTS
 #   nav_msgs#   visualization_msgs
 # )
 
-################################################
-## Declare ROS dynamic reconfigure parameters ##
-################################################
-
-## To declare and build dynamic reconfigure parameters within this
-## package, follow these steps:
-## * In the file package.xml:
-##   * add a build_depend and a exec_depend tag for "dynamic_reconfigure"
-## * In this file (CMakeLists.txt):
-##   * add "dynamic_reconfigure" to
-##     find_package(catkin REQUIRED COMPONENTS ...)
-##   * uncomment the "generate_dynamic_reconfigure_options" section below
-##     and list every .cfg file to be processed
-
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
 # generate_dynamic_reconfigure_options(
 #   cfg/DynReconf1.cfg
@@ -76,24 +58,16 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/turtlebot3_path_planner.cpp
 # )
-
 # add_dependencies(${PROJECT_NAME} ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-# add_executable(${PROJECT_NAME}_node src/turtlebot3_path_planner_node.cpp)
-
-## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
-# set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX "")
-
+add_executable(${PROJECT_NAME}_global_costmap_publisher src/global_costmap_publisher.cpp)
+set_target_properties(${PROJECT_NAME}_global_costmap_publisher PROPERTIES OUTPUT_NAME global_costmap_publisher PREFIX "")
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-
-## Specify libraries to link a library or executable target against
-# target_link_libraries(${PROJECT_NAME}_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(${PROJECT_NAME}_global_costmap_publisher
+   ${catkin_LIBRARIES}
+)
 
 #############
 ## Testing ##
