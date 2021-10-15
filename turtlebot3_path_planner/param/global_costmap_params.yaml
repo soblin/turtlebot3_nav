@@ -1,6 +1,6 @@
 global_costmap:
-  global_frame: burger1_map
-  robot_base_frame: burger1_base_footprint
+  global_frame: "$(arg robot_namespace)_map"
+  robot_base_frame: "$(arg robot_namespace)_base_footprint"
 
   update_frequency: 10.0
   publish_frequency: 10.0

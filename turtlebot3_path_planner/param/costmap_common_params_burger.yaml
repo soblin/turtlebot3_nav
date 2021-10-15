@@ -14,13 +14,13 @@ plugins:
   - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
 
 static_layer:
-  map_topic: burger1_map
+  map_topic: "/$(arg robot_namespace)_map"
   subscribe_to_updates: true
   static_map: true
 
 obstacle_layer:
   observation_sources: scan
-  scan: {sensor_frame: burger1_base_scan, data_type: LaserScan, topic: burger1_scan, marking: true, clearing: true}
+  scan: {sensor_frame: "$(arg robot_namespace)_base_scan", data_type: LaserScan, topic: "/$(arg robot_namespace)_scan", marking: true, clearing: true}
 
 inflation_layer:
   inflation_radius: 0.1

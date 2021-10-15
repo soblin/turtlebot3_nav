@@ -162,7 +162,7 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: global_costmap
-          Topic: /move_base/global_costmap/costmap
+          Topic: /burger1/move_base/global_costmap/costmap
           Unreliable: false
           Use Timestamp: false
           Value: true
@@ -172,7 +172,7 @@ Visualization Manager:
           Draw Behind: false
           Enabled: true
           Name: local_costmap
-          Topic: /move_base/local_costmap/costmap
+          Topic: /burger1/move_base/local_costmap/costmap
           Unreliable: false
           Use Timestamp: false
           Value: true
@@ -603,4 +603,4 @@ Window Geometry:
     collapsed: true
   Width: 1920
   X: 0
-  Y: 1107
+  Y: 27
