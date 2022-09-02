@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>turtlebot3_custom_description</name>
+  <name>turtlebot3_multi_nav</name>
   <version>0.0.0</version>
-  <description>Added robot prefix to link name to original</description>
+  <description>The turtlebot3_multi_nav package</description>
 
   <maintainer email="soblin@todo.todo">soblin</maintainer>
 
@@ -11,12 +11,13 @@
 
   <buildtool_depend>ament_cmake_auto</buildtool_depend>
   
-  <depend>urdf</depend>
-  <depend>xacro</depend>
-  <depend>gazebo_ros_pkgs</depend>
+  <depend>turtlebot3_simulations</depend>
+  <depend>turtlebot3_gazebo</depend>
+  <depend>turtlebot3_msgs</depend>
+  <depend>turtlebot3_teleop</depend>
+  <depend>cartographer_ros</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
-	<gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>

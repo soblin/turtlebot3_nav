@@ -1,0 +1,7 @@
+<launch>
+  <arg name="robot_namespace" description="robot_namespace is required for teleop"/>
+  <!-- turtlebot3_teleop_key already has its own built in velocity smoother -->
+  <node pkg="turtlebot3_teleop" exec="teleop_keyboard" name="$(var robot_namespace)_turtlebot3_teleop_keyboard" output="screen">
+	<remap from="cmd_vel" to="$(var robot_namespace)_cmd_vel"/>
+  </node>
+</launch>
