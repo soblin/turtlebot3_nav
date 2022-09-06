@@ -104,7 +104,8 @@
 	<gazebo reference="${prefix}_base_scan">
       <sensor type="ray" name="lds_lfcd_sensor">
         <always_on>true</always_on>
-        <visualize>true</visualize>
+		<!-- if true you can see the ray on gazebo -->
+		<visualize>$(arg laser_visual)</visualize>
         <pose>-0.032 0 0.171 0 0 0</pose>
         <update_rate>5</update_rate>
         <ray>

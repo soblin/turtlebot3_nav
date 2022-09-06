@@ -42,7 +42,7 @@ def generate_launch_description():
                parameters=[{'robot_description': urdf_xml}],
                remappings=[('/robot_description', f'/{robot_namespace}_robot_description')])
     rviz_cfg_dir = os.path.join(get_package_share_directory(
-        'turtlebot3_multi_nav'), 'config/sim.rviz')
+        'turtlebot3_multi_nav'), f'config/sim_{model}.rviz')
     rviz = Node(package='rviz2', executable='rviz2',
                 output='screen', arguments=['-d', rviz_cfg_dir])
     # https://github.com/ros-simulation/gazebo_ros_pkgs/wiki/ROS-2-Migration:-Spawn-and-delete
