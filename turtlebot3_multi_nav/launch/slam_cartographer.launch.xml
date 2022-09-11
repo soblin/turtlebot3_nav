@@ -1,5 +1,4 @@
 <launch>
-  <arg name="output"/>
   <arg name="robot_namespace"/>
   <arg name="configuration_basename"/>
   <env name="ROBOT_NAMESPACE" value="$(var robot_namespace)"/>

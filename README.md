@@ -1,14 +1,10 @@
-# launch gazebo
+# launch gazebo and robot
 
-default `world_name` is `house [house, dqn_stage[1, 2, 3, 4], world]`.
+default parameters are `world_name == house [house, dqn_stage[1, 2, 3, 4], world]`, `model == burger [burger, waffle]` , `robot_namespace == burger1`.
 
 ```bash
-ros2 launch turtlebot3_mulit_nav bringup_world.launch.xml
+ros2 launch turtlebot3_multi_nav sim.launch.xml (model:=... robot_namespace:=...)
 ```
-
-# launch robot
-
-default parameters are `model == burger [burger, waffle, waffle_pi]` , `robot_namespace == burger1`.
 
 ## launch each robot
 

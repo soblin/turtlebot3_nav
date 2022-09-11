@@ -1,18 +1,15 @@
 <launch>
   <arg name="world_name" default="house" description="world_name type [house, dqn_stage[1, 2, 3, 4], world]"/>"
-  <arg name="gui" default="true"/>
-  <arg name="paused" default="false"/>
-  <arg name="use_sim_time" default="true"/>
 
   <let name="world_file" value="$(find-pkg-share turtlebot3_gazebo)/worlds/turtlebot3_$(var world_name).world"/>
 
-  <log message="world_file is $(var world_file)"/>
   <include file="$(find-pkg-share gazebo_ros)/launch/gzserver.launch.py">
     <arg name="world" value="$(var world_file)"/>
 	<arg name="verbose" value="true"/>
   </include>
-  <include file="$(find-pkg-share gazebo_ros)/launch/gzclient.launch.py">
+  <!--include file="$(find-pkg-share gazebo_ros)/launch/gzclient.launch.py">
 	<arg name="verbose" value="true"/>
-  </include>
+	<arg name="gui" value="false"/>
+  </include-->
   
 </launch>
