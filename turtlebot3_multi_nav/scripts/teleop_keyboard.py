@@ -38,6 +38,7 @@ import os
 import select
 import sys
 import rclpy
+import random
 
 from geometry_msgs.msg import Twist
 from rclpy.qos import QoSProfile
@@ -144,8 +145,17 @@ def main():
     qos = QoSProfile(depth=10)
     node = rclpy.create_node('teleop_keyboard')
     node.declare_parameter('robot_namespace')
+    # randomly multiply some ratio of noise (up to this param)
+    node.declare_parameter('trans_cmd_noise', 0.0)
+    # randomly multiply some ratio of noise (up to this param)
+    node.declare_parameter('rot_cmd_noise', 0.0)
     robot_namespace = str(node.get_parameter('robot_namespace').value)
-    pub = node.create_publisher(Twist, f'/{robot_namespace}_cmd_vel', qos)
+    trans_cmd_noise = float(node.get_parameter('trans_cmd_noise').value)
+    rot_cmd_noise = float(node.get_parameter('rot_cmd_noise').value)
+    pub_ground_truth = node.create_publisher(
+        Twist, f'/{robot_namespace}_cmd_vel_raw', qos)
+    pub_noised = node.create_publisher(
+        Twist, f'/{robot_namespace}_cmd_vel', qos)
 
     status = 0
     target_linear_velocity = 0.0
@@ -215,7 +225,13 @@ def main():
             twist.angular.y = 0.0
             twist.angular.z = control_angular_velocity
 
-            pub.publish(twist)
+            pub_ground_truth.publish(twist)
+
+            rnd = 2 * random.random() - 1.0  # [-1.0, 1.0]
+            twist.linear.x *= (1.0 + rnd * trans_cmd_noise)
+            twist.angular.z *= (1.0 + rnd * rot_cmd_noise)
+
+            pub_noised.publish(twist)
 
     except Exception as e:
         print(e)
